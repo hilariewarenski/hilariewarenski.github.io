@@ -1,0 +1,29 @@
+.centered {
+    text-align: center;
+}
+
+header {
+    background-color: aqua;
+    color: hotpink;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.intro {
+    max-width: 500px;
+    text-align: left;
+}
+
+body {
+    background-color: lavender;
+}
+
+.centered {
+    text-align: center;
+}
+
+footer { 
+    background-color: aqua;
+    color: hotpink;
+}
+
