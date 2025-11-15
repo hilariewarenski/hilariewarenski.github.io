@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hilarie's Top Five Utah Parks for Kids</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Geist&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+         <div class="hero-image chelsea-market-regular">
+            <!-- Search form overlayed on the hero image -->
+            <form id="heroSearchForm" class="hero-search" role="search" aria-label="Search parks">
+                <label for="heroSearchInput" class="visually-hidden">Search parks</label>
+                <input id="heroSearchInput" name="q" type="search" placeholder="Search parks (e.g. Lehi, picnic)" autocomplete="off">
+                <button type="submit" aria-label="Search">Search</button>
+            </form>
+
+            <h1>Hilarie's Top Five 
+                <br>Utah Parks for Kids</h1>
+            <!-- Hero tab linking to a separate My Story page -->
+            <a class="hero-tab" href="story.html">My Story</a>
+         </div>
+    </header>       
+    <main class="main site-width">
+        <section>
+            <h2 class="centered pacifico-regular">Welcome To My Page!</h2>
+            <h3 class="centered geist-regular-bold">Lehi Family Park, Lehi</h3> 
+            <!-- The grid: six columns -->
+            <div class="row">
+                <div class="column">
+                    <img src="lehifampark1.jpg" class="park_images" alt="Lehi Family Park tall slide">
+                </div>
+                <div class="column">
+                    <img src="lehifampark2.jpg" class="park_images" alt="Lehi Family Park playground slides">
+                </div>
+                <div class="column">
+                    <img src="lehifampark7.jpg" class="park_images" alt="Lehi Family Park splash pad">
+                </div>
+                <div class="column">
+                    <img src="lehifampark4.jpg" class="park_images" alt="Lehi Family Park playground">
+                </div>
+                <div class="column">
+                    <img src="lehifampark5.JPG" class="park_images" alt="Lehi Family Park toddler play area">
+                </div>
+                <div class="column">
+                    <img src="lehifampark6.JPG" class="park_images" alt="Lehi Family Park">
+                </div>
+            </div>
+                <!-- The expanding image container -->
+                <div class="container">
+                    <!-- Close the image -->
+                    <button class="closebtn" type="button" aria-label="Close expanded image">&times;</button>
+
+                    <!-- Expanded image (focusable for keyboard users) -->
+                    <img id="expandedImg" style="width:100%" tabindex="-1" alt="Expanded park image">
+
+                    <!-- Image text -->
+                    <div id="imgtext" aria-live="polite"></div>
+                </div>
+            <div>
+                <p class="centered geist-regular">Lehi Family Park quickly became one of our favorite places, mostly because of how much my daughter absolutely lit up the moment we walked in. She ran from one play feature to the next, climbing, sliding, and exploring like she had been waiting all week for this exact moment. One of my favorite parts is that the whole playground is fully fenced with just one entrance and exit while she’s off having the time of her life, I can breathe knowing she’s safely contained. The all-abilities design also means she can enjoy every part of the park without feeling limited, and it warms my heart to see kids of all needs playing right alongside her.
+                </p>
+                <p class="centered geist-regular">But the splash pad is where she really came alive. She squealed every time the fountains shot up, ran through the sprayers over and over, and kept shouting for me to “watch this!” even though I never looked away. Watching her bounce between the playground and the water with that huge grin made the whole visit feel magical. We ended up staying way longer than I planned both times we have come here, because she was just so happy. And honestly, I didn’t have the heart to cut that joy short.
+                </p>
+            </div>
+        </section>
+        <br>
+        <h3 class="centered geist-regular-bold">Brookside Park in South Jordan</h3>
+        <!-- The grid: six columns -->
+            <div class="row">
+                <div class="column">
+                    <img src="brooksidepark1.jpg" class="park_images" alt="Brookside Park stream close up">
+                </div>
+                <div class="column">
+                    <img src="brooksidepark2.jpg" class="park_images" alt="Brookside Park stream wide view">
+                </div>
+                <div class="column">
+                    <img src="brooksidepark3.jpg" class="park_images" alt="Brookside Park playground">
+                </div>
+                <div class="column">
+                    <img src="brooksidepark4.jpg" class="park_images" alt="Brookside Park playground tunnel">
+                </div>
+                <div class="column">
+                    <img src="brooksidepark5.jpg" class="park_images" alt="Brookside Park zip line">
+                </div>
+                <div class="column">
+                    <img src="brooksidepark7.jpg" class="park_images" alt="Daughter playing in the mud at Brookside Park">
+                </div>
+            </div>
+                <!-- The expanding image container -->
+                <div class="container">
+                    <!-- Close the image -->
+                    <button class="closebtn" type="button" aria-label="Close expanded image">&times;</button>
+
+                    <!-- Expanded image (focusable for keyboard users) -->
+                    <img id="expandedImg" style="width:100%" tabindex="-1" alt="Expanded park image">
+
+                    <!-- Image text -->
+                    <div id="imgtext" aria-live="polite"></div>
+                </div>
+    </main>
+    <script src="index.js"></script>
+    <footer>
+    </footer>
+</body>
+</html>

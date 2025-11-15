@@ -1,0 +1,300 @@
+main {
+    margin: auto 100px;
+    padding-bottom: 50px;
+}
+
+/* Page wrapper to constrain content width and center it on large screens */
+.site-width {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.centered {
+    text-align: center;
+}
+
+.body-background {
+    background-color: #3EC94A;
+}
+
+.hero-image {
+    /* overlay gradient on top of the photo */
+    background-image: linear-gradient(rgba(149, 146, 146, 0.45), rgba(0, 0, 0, 0.45)), url("Bryce_header_image.JPG");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    /* give it visible height so the image shows — adjust as needed */
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  position: relative; /* allow absolutely-positioned overlay inside */
+    color: white;
+    text-align: center;  
+}
+
+.chelsea-market-regular {
+  font-family: "Chelsea Market", system-ui;
+  font-weight: 400;
+  font-size: 24px;
+  font-style: normal;
+}
+
+.intro {
+    max-width: 500px;
+    text-align: center;
+}
+
+.pacifico-regular {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: bold;
+  font-size: 36px;
+  text-decoration: underline;
+}
+
+.my_story {
+    max-width: 700px;
+    text-align: center;
+}
+
+.about_me_image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 220px; /* slightly larger main photo */
+    border-radius: 50%;
+}
+
+/* Extra spacing on the My Story page between hero and the about photo */
+.page-story .about_me_image {
+  margin-top: 40px; /* reduced gap between hero and about photo */
+}
+
+.geist-regular {
+  font-family: "Geist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+}
+
+.geist-regular-bold {
+  font-family: "Geist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+/* Make images percentage-based and fill their column */
+.park_images {
+  display: block;
+  width: 100%;
+  /* fixed height so images are uniform; adjust to taste */
+  height: 140px;
+  object-fit: cover; /* preserves aspect ratio and crops to fill */
+  object-position: center;
+  border-radius: 8px;
+}
+
+/* Search overlay styles inside the hero */
+.hero-search {
+  position: absolute;
+  top: 18px;
+  right: 18px; /* place on the right side of the hero */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.92);
+  padding: 6px 8px;
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  z-index: 5;
+  /* smooth transitions when moving / resizing between breakpoints */
+  transition: transform 400ms cubic-bezier(.22,.9,.37,1), opacity 400ms ease, width 400ms ease, margin 400ms ease;
+  will-change: transform, opacity, width, margin;
+}
+
+.hero-search input[type="search"]{
+  border: none;
+  outline: none;
+  padding: 8px 10px;
+  font-size: 16px;
+  background: transparent;
+  width: min(520px, 52vw);
+}
+
+.hero-search button{
+  border: none;
+  background: #1976d2;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.hero-search button:focus, .hero-search input:focus{
+  box-shadow: 0 0 0 3px rgba(25,118,210,0.16);
+}
+
+/* Hero tab (My Story): a subtle pill-shaped link under the hero title */
+.hero-tab {
+  display: inline-block;
+  position: absolute; /* place on the left side of the hero */
+  left: 18px;
+  top: 18px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.14);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.18);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hero-tab:hover, .hero-tab:focus {
+  background: rgba(255,255,255,0.24);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+@media (max-width: 640px) {
+  /* On mobile, make the tab a full-width stacked block below the search */
+  .hero-tab {
+    position: static;
+    order: 3; /* place after H1 and search in mobile stacked layout */
+    width: calc(100% - 48px);
+    text-align: center;
+    padding: 10px 14px;
+    background: rgba(255,255,255,0.98);
+    color: #111;
+    border-color: rgba(0,0,0,0.08);
+  }
+}
+
+/* visually-hidden helper */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line */
+}
+
+/* Mobile: reposition the hero search to stack under the hero heading and
+   become full-width for easier tap targets. */
+@media (max-width: 640px) {
+  .hero-search {
+    position: static; /* participate in document flow */
+    /* place slightly lower and allow the transition to slide it up into place */
+    transform: translateY(12px);
+    left: auto;
+    top: auto;
+    margin: 10px auto 0;
+    width: calc(100% - 32px);
+    justify-content: stretch;
+    background: rgba(255,255,255,0.98);
+    padding: 8px;
+  }
+
+  /* make input fill remaining space and button smaller */
+  .hero-search input[type="search"]{
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 16px;
+  }
+
+  .hero-search button{
+    padding: 8px 10px;
+    margin-left: 8px;
+    flex: 0 0 auto;
+  }
+
+  /* stack visually: place search directly above or below the H1 - achieve via DOM order */
+  /* Force the hero to stack its children vertically and visually place the
+     heading before the search box without touching the HTML order. */
+  .hero-image {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-image h1 {
+    order: 1;
+    margin-top: 12px;
+    font-size: 1.6rem;
+  }
+
+  .hero-search {
+    order: 2; /* appear after the H1 */
+  }
+}
+
+/* Gallery layout using flexbox in a single horizontal row */
+.row {
+  display: flex;
+  flex-wrap: nowrap; /* force one horizontal row */
+  justify-content: center;
+  gap: 6px; /* tighter gap between images */
+  align-items: flex-start;
+  overflow-x: auto; /* allow scrolling on small screens */
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 6px; /* space for scroll on some browsers */
+}
+
+.column {
+  /* six evenly-sized columns across the container */
+  flex: 0 0 16%;
+  box-sizing: border-box;
+  padding: 4px; /* small padding to separate images */
+  display: flex;
+  justify-content: center; /* center the image inside the column */
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.9;
+  cursor: pointer;
+  transition: opacity 150ms ease, transform 160ms ease;
+}
+
+.column img:hover {
+  opacity: 1;
+  transform: translateY(-4px);
+}
+
+/* Keep single horizontal row; user can scroll horizontally on narrow screens.
+   If you'd like the gallery to wrap on small screens instead, we can restore
+   responsive breakpoints (e.g., two columns under 900px, one column under 480px).
+*/
+
+/* The expanding image container (positioning is needed to position the close button and the text) */
+.container {
+  position: relative;
+  display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Closable button inside the image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
