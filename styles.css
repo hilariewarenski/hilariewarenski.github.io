@@ -40,18 +40,19 @@ main {
 /* Make the hero title more prominent and responsive */
 .hero-image h1 {
   margin: 0;
-  /* scale from ~26px up to 48px depending on viewport (slightly smaller for balance) */
-  font-size: clamp(1.6rem, 4.5vw, 48px);
+  /* scale from ~28px up to 64px depending on viewport for a stronger hero presence */
+  font-size: clamp(1.8rem, 5.5vw, 64px);
   line-height: 1.02;
-  font-weight: 700;
-  letter-spacing: -0.5px;
+  font-weight: 800;
+  letter-spacing: -0.6px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
 @media (max-width: 640px) {
   .hero-image h1 {
-    font-size: clamp(1.2rem, 5vw, 24px);
+    /* slightly larger mobile cap so the hero still reads clearly */
+    font-size: clamp(1.25rem, 5vw, 28px);
     line-height: 1.08;
     margin-top: 6px;
   }
@@ -86,11 +87,11 @@ main {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 220px; /* slightly larger main photo */
+    width: 300px; /* slightly larger main photo */
     border-radius: 50%;
 }
 
-/* Extra spacing on the My Story page between hero and the about photo */
+/* Extra spacing on the About Me page between hero and the about photo */
 .page-story .about_me_image {
   margin-top: 40px; /* reduced gap between hero and about photo */
 }
@@ -100,7 +101,7 @@ main {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .geist-regular-bold {
@@ -109,7 +110,6 @@ main {
   font-weight: 700;
   font-style: normal;
   font-size: 20px;
-  text-decoration: underline;
 }
 
 /* Make images percentage-based and fill their column */
@@ -164,7 +164,7 @@ main {
   box-shadow: 0 0 0 3px rgba(25,118,210,0.16);
 }
 
-/* Hero tab (My Story): a subtle pill-shaped link under the hero title */
+/* Hero tab (About Me): a subtle pill-shaped link under the hero title */
 .hero-tab {
   display: inline-block;
   position: absolute; /* place on the left side of the hero */
@@ -386,8 +386,11 @@ main {
 /* Remove default heading margins so spacing is predictable */
 .welcome-center h2 {
   margin: 0;
-  /* slightly smaller: grows with viewport up to 32px */
-  font-size: clamp(1.2rem, 2.6vw, 32px);
+  /* larger, bolder welcome heading: scales from ~20px up to 40px on wide screens */
+  font-size: clamp(1.25rem, 4.2vw, 40px);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.8px;
 }
 
 /* Reduce the space between the welcome block and the following park heading */
@@ -407,7 +410,8 @@ main {
     padding: 8px 0 6px 0;
   }
   .welcome-center h2 {
-    font-size: 1.25rem; /* slightly smaller on small screens */
+    /* keep the mobile cap comfortable for small devices */
+    font-size: 1.1rem;
   }
 }
 
@@ -426,4 +430,181 @@ main {
     max-width: 48%;
     margin-bottom: 12px;
   }
+}
+
+/* Back to Home link on story page */
+.story-footer {
+  padding: 18px 0 36px 0;
+}
+.back-to-home {
+  display: inline-block;
+  background: rgba(255,255,255,0.96);
+  color: #111;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(0,0,0,0.08);
+  text-decoration: none;
+  font-weight: 600;
+}
+.back-to-home:hover, .back-to-home:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* Multicolored / gradient text for park titles (h3.centered.geist-regular-bold) */
+h3.centered.geist-regular-bold {
+  /* darker rainbow-ish gradient clipped to text for stronger contrast */
+  background-image: linear-gradient(90deg, #d62828, #e07a2b, #1572a1, #0f826f, #5a3d8a);
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; /* Safari */
+  color: transparent;
+  /* subtle lift on hover retained from existing headings */
+  transition: background-position 6s linear, transform 200ms ease;
+}
+
+@keyframes parkTitleShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* animate gradient for a gentle moving effect */
+h3.centered.geist-regular-bold {
+  animation: parkTitleShift 8s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  h3.centered.geist-regular-bold {
+    animation: none;
+    background-position: 50% 50%;
+  }
+}
+
+/* Per-park gradient palettes */
+/* These target the h3 park headings (they already have .centered and the font class). */
+h3.centered.rubik-gemstones-regular.park-lehi,
+h3.centered.park-lehi {
+  /* Lehi: warm, deeper orange */
+  background-image: linear-gradient(90deg, #d94f33, #b24b2a);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: parkTitleShift 8s linear infinite;
+}
+
+h3.centered.rubik-gemstones-regular.park-brookside,
+h3.centered.park-brookside {
+  /* Brookside: deeper water-blue */
+  background-image: linear-gradient(90deg, #006bb3, #004a99);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: parkTitleShift 8s linear infinite;
+}
+
+h3.centered.rubik-gemstones-regular.park-cook,
+h3.centered.park-cook {
+  /* Cook: deeper coral/pink */
+  background-image: linear-gradient(90deg, #c94b59, #9e3a4b);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: parkTitleShift 8s linear infinite;
+}
+
+h3.centered.rubik-gemstones-regular.park-lookout,
+h3.centered.park-lookout {
+  /* Lookout: deeper greens */
+  background-image: linear-gradient(90deg, #2f9e5a, #1b8a4a);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: parkTitleShift 8s linear infinite;
+}
+
+h3.centered.rubik-gemstones-regular.park-quail,
+h3.centered.park-quail {
+  /* Quail: richer purple */
+  background-image: linear-gradient(90deg, #6a4c93, #8e44ad);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: parkTitleShift 8s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  h3.centered.rubik-gemstones-regular.park-lehi,
+  h3.centered.rubik-gemstones-regular.park-brookside,
+  h3.centered.rubik-gemstones-regular.park-cook,
+  h3.centered.rubik-gemstones-regular.park-lookout,
+  h3.centered.rubik-gemstones-regular.park-quail,
+  h3.centered.park-lehi,
+  h3.centered.park-brookside,
+  h3.centered.park-cook,
+  h3.centered.park-lookout,
+  h3.centered.park-quail {
+    animation: none;
+    background-position: 50% 50%;
+  }
+}
+
+.rubik-gemstones-regular {
+  font-family: "Rubik Gemstones", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Park title base styles: much larger and bolder while remaining responsive */
+/* Targets both Rubik Gemstones and Geist park heading variants */
+h3.centered.rubik-gemstones-regular,
+h3.centered.geist-regular-bold,
+h3.centered.rubik-gemstones-regular.park-lehi,
+h3.centered.rubik-gemstones-regular.park-brookside,
+h3.centered.rubik-gemstones-regular.park-cook,
+h3.centered.rubik-gemstones-regular.park-lookout,
+h3.centered.rubik-gemstones-regular.park-quail,
+h3.centered.park-lehi,
+h3.centered.park-brookside,
+h3.centered.park-cook,
+h3.centered.park-lookout,
+h3.centered.park-quail {
+  /* scale from about 20px up to 40px depending on viewport */
+  font-size: clamp(1.25rem, 4.0vw, 40px);
+  font-weight: 800; /* much bolder */
+  line-height: 1.05;
+  margin-top: 0.5rem;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.5px;
+}
+
+/* Footer image: full-width but low height so it doesn't take much vertical space */
+footer.site-footer {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* ensure the image cropping behaves */
+  background: transparent;
+}
+
+.footer-image {
+  display: block;
+  width: 100%;
+  /* even tighter cap: from ~20px up to 40px on large screens (minimal vertical space) */
+  height: clamp(20px, 2.2vh, 40px);
+  max-height: 48px;
+  object-fit: cover; /* crop to fill width while preserving aspect */
+  object-position: center;
 }
