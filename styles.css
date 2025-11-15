@@ -386,8 +386,8 @@ main {
 /* Remove default heading margins so spacing is predictable */
 .welcome-center h2 {
   margin: 0;
-  /* Slightly larger than before for better readability: grows with viewport up to 38px */
-  font-size: clamp(1.35rem, 3.0vw, 38px);
+  /* slightly smaller: grows with viewport up to 32px */
+  font-size: clamp(1.2rem, 2.6vw, 32px);
 }
 
 /* Reduce the space between the welcome block and the following park heading */
@@ -407,7 +407,7 @@ main {
     padding: 8px 0 6px 0;
   }
   .welcome-center h2 {
-    font-size: 1.45rem; /* slightly larger on small screens */
+    font-size: 1.25rem; /* slightly smaller on small screens */
   }
 }
 

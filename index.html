@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Geist:wght@800&family=Kalnia+Glaze:wght@700&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="body-background">
     <header>
          <div class="hero-image chelsea-market-regular">
             <!-- Search form overlayed on the hero image -->
@@ -25,14 +25,27 @@
             <!-- Hero tab linking to a separate My Story page -->
             <a class="hero-tab" href="story.html">My Story</a>
          </div>
-    </header>       
+         <br>
+         <br>
+         <br>
+    </header>
+    <!-- Cookie Monster GIF: placed directly below the hero and above the main welcome block -->
+    <div class="welcome-gif-wrapper">
+      <img src="cookiemonster.gif" alt="Cookie Monster waving" class="welcome-gif">
+    </div>
+
     <main class="main site-width">
-                <section>
-                        <div class="welcome-center">
-                            <h2 class="centered kalnia-glaze-regular color-hover">Welcome To My Page!</h2>
-                        </div>
-                        <p class="centered geist-regular">Welcome to my little corner of the internet where I get to share five of our absolute favorite parks. As a mom to kids with endless energy, I wanted to find a way to take my child to fun places without spending a lot of money, and these parks quickly became our go to spots. We have explored so many playgrounds, splash pads, streams, and green spaces, but these stood out because they brought out the biggest smiles and the best memories. I am excited to share what makes each one special and why they have become our favorite places for everyday adventures.</p>
-            <h3 class="centered geist-regular-bold">Lehi Family Park, Lehi</h3> 
+        <br>
+        <section>
+            <div class="welcome-center">
+                 <h2 class="centered kalnia-glaze-regular color-hover">Welcome To My Page!</h2>
+            </div>
+            <div>   
+                <p class="centered geist-regular">Welcome to my little corner of the internet where I get to share five of our absolute favorite parks. As a mom to kids with endless energy, I wanted to find a way to take my child to fun places without spending a lot of money, and these parks quickly became our go to spots. We have explored so many playgrounds, splash pads, streams, and green spaces, but these stood out because they brought out the biggest smiles and the best memories. I am excited to share what makes each one special and why they have become our favorite places for everyday adventures.</p>
+            </div>
+            <div>
+                <h3 class="centered geist-regular-bold">Lehi Family Park, Lehi</h3>
+            </div>
             <!-- The grid: six columns -->
             <div class="row">
                 <div class="column">
@@ -73,11 +86,14 @@
             </div>
         </section>
         <br>
-        <h3 class="centered geist-regular-bold">Brookside Park in South Jordan</h3>
+        <br>
+        <br>
+        <section>
+            <h3 class="centered geist-regular-bold">Brookside Park in South Jordan</h3>
         <!-- The grid: six columns -->
             <div class="row">
                 <div class="column">
-                    <img src="brooksidepark1.jpg" class="park_images" alt="Brookside Park stream close up">
+                    <img src="brooksidepark8.jpg" class="park_images" alt="Kids playing in Brookside Park stream">
                 </div>
                 <div class="column">
                     <img src="brooksidepark2.jpg" class="park_images" alt="Brookside Park stream wide view">
@@ -106,10 +122,95 @@
                     <!-- Image text -->
                 <div id="imgtext" aria-live="polite"></div>
             </div>
+            <div>     
                 <p class="centered geist-regular">Brookside Park in Daybreak is one of my daughter's absolute favorite places to play, and it is mostly because of the little stream that runs through it. The moment we get there, she heads straight for the water, splashing, hopping across rocks, and creating her own little adventures like it is her own personal nature playground. She spends so much time there, completely in her element, with that huge smile she only gets when she is doing her very favorite thing.</p>
                 <p class="centered geist-regular">The rest of the park, with its fun playground, open space, and friendly neighborhood feel, just adds to the magic. We always stay much longer than planned because she is so happy in that stream, and honestly, watching her explore and laugh makes it one of my favorite parks too.</p>
+            </div>
         </section>
-    </main>
+        <br>
+        <br>
+        <section>
+            <div>  
+                <h3 class="centered geist-regular-bold">Cook Family Park, Pleasant Grove</h3> 
+            </div>
+            <!-- The grid: six columns -->
+            <div class="row">
+                <div class="column">
+                    <img src="cookfampark1.jpg" class="park_images" alt="Cook Family Park playground">
+                </div>
+                <div class="column">
+                    <img src="cookfampark2.jpg" class="park_images" alt="Cook Family Park playground spiral slides">
+                </div>
+                <div class="column">
+                    <img src="cookfampark7.jpg" class="park_images" alt="Cook Family Park skate park">
+                </div>
+                <div class="column">
+                    <img src="cookfampark4.jpg" class="park_images" alt="Cook Family Park playground climbing structures and slides">
+                </div>
+                <div class="column">
+                    <img src="cookfampark5.JPG" class="park_images" alt="Cook Family Park playground sign">
+                </div>
+                <div class="column">
+                    <img src="cookfampark6.JPG" class="park_images" alt="Daughter smiling on playground at Family Park">
+                </div>
+            </div>
+                <!-- The expanding image container -->
+                <div class="container">
+                    <!-- Close the image -->
+                    <button class="closebtn" type="button" aria-label="Close expanded image">&times;</button>
+
+                    <!-- Expanded image (focusable for keyboard users) -->
+                    <img id="expandedImg" style="width:100%" tabindex="-1" alt="Expanded park image">
+
+                    <!-- Image text -->
+                    <div id="imgtext" aria-live="polite">
+                    </div>
+                </div>
+                <div>
+                    <p class="centered geist-regular">Cook Family Park is a favorite for two of my kids, each for their own reasons. My adult son joined us last time we came to this park and heads straight for the skate park the moment we arrive, excited to try new tricks and push himself a little further every time. It has really become “his spot,” and I love seeing how confident and focused he is there.Meanwhile, my daughter heads for the playground with pure excitement. She climbs, slides, and explores every inch like it is her own little adventure world. She loves how much there is to do and how she can bounce from one activity to the next without ever slowing down.</p>  
+                    <p class="centered geist-regular">
+        </section>
+        <br>
+        <br>
+        <br>
+                <div>
+                <h3 class="centered geist-regular-bold">Lookout Park, South Jordan</h3>
+                </div>
+                <!-- The grid: six columns -->
+            <div class="row">
+                <div class="column">
+                    <img src="cookfampark1.jpg" class="park_images" alt="Cook Family Park playground">
+                </div>
+                <div class="column">
+                    <img src="cookfampark2.jpg" class="park_images" alt="Cook Family Park playground spiral slides">
+                </div>
+                <div class="column">
+                    <img src="cookfampark7.jpg" class="park_images" alt="Cook Family Park skate park">
+                </div>
+                <div class="column">
+                    <img src="cookfampark4.jpg" class="park_images" alt="Cook Family Park playground climbing structures and slides">
+                </div>
+                <div class="column">
+                    <img src="cookfampark5.JPG" class="park_images" alt="Cook Family Park playground sign">
+                </div>
+                <div class="column">
+                    <img src="cookfampark6.JPG" class="park_images" alt="Daughter smiling on playground at Family Park">
+                </div>
+            </div>
+                <!-- The expanding image container -->
+                <div class="container">
+                    <!-- Close the image -->
+                    <button class="closebtn" type="button" aria-label="Close expanded image">&times;</button>
+
+                    <!-- Expanded image (focusable for keyboard users) -->
+                    <img id="expandedImg" style="width:100%" tabindex="-1" alt="Expanded park image">
+
+                    <!-- Image text -->
+                    <div id="imgtext" aria-live="polite">
+                    </div>
+                </div>
+    
+        </main>
     <script src="index.js"></script>
     <footer>
     </footer>
