@@ -5,13 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About Me — Hilarie's Top Five Utah Parks</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Google Fonts (match Index.html) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Geist:wght@800&family=Kalnia+Glaze:wght@700&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,999&display=swap" rel="stylesheet">
 </head>
 <body class="page-story body-background">
   <header>
     <div class="hero-image chelsea-market-regular">
+      <!-- Search form overlayed on the hero image (kept to match Index.html) -->
+      <form id="heroSearchForm" class="hero-search" role="search" aria-label="Search parks">
+        <label for="heroSearchInput" class="visually-hidden">Search parks</label>
+        <input id="heroSearchInput" name="q" type="search" placeholder="Search parks (e.g. Lehi, picnic)" autocomplete="off">
+        <button type="submit" aria-label="Search">Search</button>
+      </form>
+
       <h1>About Me</h1>
+      <!-- Hero tab linking back to the Home page -->
+      <a class="hero-tab" href="Index.html">Home</a>
     </div>
   </header>
+
+  <!-- Cookie Monster GIF: keep placement consistent with Index.html (below the hero) -->
+  <div class="welcome-gif-wrapper">
+    <img src="cookiemonster.gif" alt="Cookie Monster waving" class="welcome-gif">
+  </div>
 
   <main class="main site-width">
     <section>
@@ -23,6 +41,11 @@
       </div>
     </section>
   </main>
+  <script src="index.js"></script>
+  <footer class="site-footer">
+    <img src="footer_image.jpg" alt="Wide footer image showing a park" class="footer-image">
+  </footer>
+
   <footer class="story-footer">
     <p class="centered"><a href="Index.html" class="back-to-home">← Back to Home</a></p>
   </footer>
