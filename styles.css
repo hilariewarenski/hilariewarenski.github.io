@@ -298,3 +298,93 @@ main {
   cursor: pointer;
 }
 
+
+.kalnia-glaze-regular {
+  font-family: "Kalnia Glaze", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 36px;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+/* Continuous animated rainbow gradient text (reusable) */
+.color-hover {
+  display: inline-block; /* keeps background-clip from stretching full width */
+  /* sensible fallback color for older browsers */
+  color: #222;
+
+  /* rainbow gradient clipped to the text */
+  background-image: linear-gradient(90deg, violet, indigo, blue, green, yellow, orange, red);
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; /* Safari fallback */
+  color: transparent; /* show the clipped background through text */
+
+  /* animate the background-position to create continuous movement */
+  animation: rainbowShift 6s linear infinite;
+  transition: transform 220ms ease;
+}
+
+.color-hover:focus {
+  outline: 3px solid rgba(25,118,210,0.18); /* keyboard focus visible */
+  outline-offset: 3px;
+}
+
+/* slight lift on hover for a small micro-interaction */
+.color-hover:hover {
+  transform: translateY(-2px);
+}
+
+@keyframes rainbowShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .color-hover {
+    animation: none;
+    background-position: 50% 50%;
+  }
+}
+
+/* Center the welcome heading both horizontally and vertically (responsive) */
+.welcome-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* small padding instead of large min-heights so the heading sits closer to the hero */
+  padding: 12px 0 6px 0;
+}
+
+/* Remove default heading margins so spacing is predictable */
+.welcome-center h2 {
+  margin: 0;
+}
+
+/* Reduce the space between the welcome block and the following park heading */
+.welcome-center + h3.centered.geist-regular-bold {
+  margin-top: 8px;
+}
+
+@media (min-width: 900px) {
+  /* slightly larger separation on wide screens, but still compact */
+  .welcome-center {
+    padding: 18px 0 8px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-center {
+    padding: 8px 0 6px 0;
+  }
+  .welcome-center h2 {
+    font-size: 1.4rem; /* a bit smaller on small screens */
+  }
+}
