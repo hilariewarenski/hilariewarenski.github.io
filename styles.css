@@ -5,7 +5,7 @@ main {
 
 /* Page wrapper to constrain content width and center it on large screens */
 .site-width {
-  max-width: 1200px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 16px;
@@ -17,7 +17,7 @@ main {
 }
 
 .body-background {
-    background-color: #3EC94A;
+    background-color: skyblue;
 }
 
 .hero-image {
@@ -35,6 +35,26 @@ main {
   position: relative; /* allow absolutely-positioned overlay inside */
     color: white;
     text-align: center;  
+}
+
+/* Make the hero title more prominent and responsive */
+.hero-image h1 {
+  margin: 0;
+  /* scale from ~26px up to 48px depending on viewport (slightly smaller for balance) */
+  font-size: clamp(1.6rem, 4.5vw, 48px);
+  line-height: 1.02;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (max-width: 640px) {
+  .hero-image h1 {
+    font-size: clamp(1.2rem, 5vw, 24px);
+    line-height: 1.08;
+    margin-top: 6px;
+  }
 }
 
 .chelsea-market-regular {
@@ -80,7 +100,7 @@ main {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .geist-regular-bold {
@@ -366,6 +386,8 @@ main {
 /* Remove default heading margins so spacing is predictable */
 .welcome-center h2 {
   margin: 0;
+  /* Slightly larger than before for better readability: grows with viewport up to 38px */
+  font-size: clamp(1.35rem, 3.0vw, 38px);
 }
 
 /* Reduce the space between the welcome block and the following park heading */
@@ -385,6 +407,23 @@ main {
     padding: 8px 0 6px 0;
   }
   .welcome-center h2 {
-    font-size: 1.4rem; /* a bit smaller on small screens */
+    font-size: 1.45rem; /* slightly larger on small screens */
+  }
+}
+
+/* Styling for the Cookie Monster GIF above the welcome heading */
+.welcome-gif {
+  display: block;
+  margin: 0 auto 14px auto;
+  width: 200px;       /* slightly larger base size */
+  max-width: 36%;    /* allow larger percentage on narrow containers */
+  height: auto;
+}
+
+@media (max-width: 640px) {
+  .welcome-gif {
+    width: 140px;    /* increased mobile size */
+    max-width: 48%;
+    margin-bottom: 12px;
   }
 }
